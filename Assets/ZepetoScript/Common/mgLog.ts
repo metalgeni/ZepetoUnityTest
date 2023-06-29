@@ -11,6 +11,8 @@ export class mgLog {
     static log(...data: any[]): void {
         if (this.logDisable == true)
             return;
+
+        //data = '<Color=Cyan>' + data + '</Color>';
         console.log(data);
     }
 

@@ -15,77 +15,87 @@ export default class TestManager extends ZepetoScriptBehaviour {
 
     @SerializeField() private testButtons: Button[];
 
-    private _sendCoroutine :Coroutine;
+    private _sendCoroutine: Coroutine;
 
 
-    
-    private _callbacks: btnCallback1[] = [ this.firstButton, ]; 
 
-    
-    Start() {    
+    //private _callbacks: btnCallback1[] = [this.firstButton, this.firstButton,];
+
+
+    Start() {
         mgLog.log('test manager started');
 
-        this._sendCoroutine = this.StartCoroutine(this.ForceReTargetCoroutine());
+        this._sendCoroutine = this.StartCoroutine(this.testCoroutine());
     }
 
-    OnEnable()
-    {
-        mgLog.log( ' on enable  ');
-        // this.testButton.onClick.AddListener(
-        //     () => {
+    OnEnable() {
+        mgLog.log(' on enable  ');
 
-        //         mgLog.log( ' button onClicked ');
-        //         this.StopTimer();
-        //     } 
-        // );        
+        this.testButtons[0].onClick.AddListener(
+            () => {
 
-        this._callbacks.forEach(( callback, index ) => {
-            //this.testButtons[index].onClick.AddListener( () => callback );     
-            this.testButtons[index].onClick.AddListener( callback );
+                mgLog.log('<Color=Cyan> button onClicked </Color>');
+                this.stopMyCoroutine();
+            }
+        );
+
+        /*        
+        this._callbacks.forEach((callback, index) => {
+
+            if (index == 0)
+                return;
+
+            mgLog.log(`<Color=Orange> button asinged index - ${index}...</Color>`);
+
+            this.testButtons[index].onClick.AddListener(
+                callback        // TypeError: this.stopMyCoroutine is not a function
+            );
 
         });
-    }
-
-    firstButton()
-    {
-        mgLog.log( ' button onClicked ');
-        this.StopTimer();
+        */
     }
 
 
-    OnDisable()
-    {
-        mgLog.log( ' on disable  ');
+
+    stopMyCoroutine(): void {
+
+        mgLog.log(' stoped!!!!  ');
+
+        if (this._sendCoroutine != null) {
+            this.StopCoroutine(this._sendCoroutine);
+            this._sendCoroutine = null;
+        }
+
+        return;
+
     }
 
 
-    *ForceReTargetCoroutine() {
+    firstButton() {
+        mgLog.log('<Color=Orange> called first button </Color>');
+        mgLog.log('<Color=Orange> called first button ...</Color>');
+        this.stopMyCoroutine();
+    }
 
-        let wait = new WaitForSeconds(1); 
-        for( let i = 0; i < 10; ++i) {
-            //yield new WaitForSeconds(1);
 
-            yield new WaitForFixedUpdate();    
+    OnDisable() {
+        mgLog.log(' on disable  ');
+    }
 
+
+    *testCoroutine() {
+
+        let wait = new WaitForSeconds(1);
+        for (let i = 0; i < 10; ++i) {
+
+            yield new WaitForFixedUpdate();
             yield wait;
 
             mgLog.log(`wait 1sec - index ${i}`);
-            //console.log(`wait 1sec - index ${i}`);
-    
-            TestSt.getInstance().PrintInfo();    
+
+            TestSt.getInstance().PrintInfo();
         }
     }
 
-    StopTimer()
-    {
-
-        mgLog.log( ' stoped!!!!  ');
-
-        if( this._sendCoroutine!= null) {
-            this.StopCoroutine( this._sendCoroutine);
-            this._sendCoroutine = null;    
-        }
-
-    }
 
 }

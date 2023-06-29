@@ -23,25 +23,31 @@ ScriptedImporter:
     ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst mgLog_1 = require(\"../Common/mgLog\");\r\nconst
     testst_1 = require(\"./testst\");\r\nclass TestManager extends ZEPETO_Script_1.ZepetoScriptBehaviour
     {\r\n    constructor() {\r\n        //@SerializeField() private testButton: Button;\r\n       
-    super(...arguments);\r\n        this._callbacks = [this.firstButton,];\r\n   
+    super(...arguments);\r\n        this._callbacks = [this.firstButton, this.firstButton,];\r\n   
     }\r\n    Start() {\r\n        mgLog_1.mgLog.log(''test manager started'');\r\n       
-    this._sendCoroutine = this.StartCoroutine(this.ForceReTargetCoroutine());\r\n   
-    }\r\n    OnEnable() {\r\n        mgLog_1.mgLog.log('' on enable  '');\r\n       
-    // this.testButton.onClick.AddListener(\r\n        //     () => {\r\n       
-    //         mgLog.log( '' button onClicked '');\r\n        //         this.StopTimer();\r\n       
-    //     } \r\n        // );        \r\n        this._callbacks.forEach((callback,
-    index) => {\r\n            //this.testButtons[index].onClick.AddListener( ()
-    => callback );     \r\n            this.testButtons[index].onClick.AddListener(callback);\r\n       
-    });\r\n    }\r\n    firstButton() {\r\n        mgLog_1.mgLog.log('' button onClicked
-    '');\r\n        this.StopTimer();\r\n    }\r\n    OnDisable() {\r\n        mgLog_1.mgLog.log(''
-    on disable  '');\r\n    }\r\n    *ForceReTargetCoroutine() {\r\n        let wait
-    = new UnityEngine_1.WaitForSeconds(1);\r\n        for (let i = 0; i < 10; ++i)
-    {\r\n            //yield new WaitForSeconds(1);\r\n            yield new UnityEngine_1.WaitForFixedUpdate();\r\n           
+    this._sendCoroutine = this.StartCoroutine(this.testCoroutine());\r\n    }\r\n   
+    OnEnable() {\r\n        mgLog_1.mgLog.log('' on enable  '');\r\n        // this.testButton.onClick.AddListener(\r\n       
+    //     () => {\r\n        //         mgLog.log( '' button onClicked '');\r\n       
+    //         this.StopTimer();\r\n        //     } \r\n        // );        \r\n       
+    this.testButtons[0].onClick.AddListener(() => {\r\n            mgLog_1.mgLog.log(''<Color=Cyan>
+    button onClicked </Color>'');\r\n            this.stopMyCoroutine();\r\n       
+    });\r\n        this._callbacks.forEach((callback, index) => {\r\n           
+    if (index == 0)\r\n                return;\r\n            mgLog_1.mgLog.log(`<Color=Orange>
+    button asinged index - ${index}...</Color>`);\r\n            this.testButtons[index].onClick.AddListener(callback);\r\n       
+    });\r\n    }\r\n    stopMyCoroutine() {\r\n        mgLog_1.mgLog.log('' stoped!!!! 
+    '');\r\n        if (this._sendCoroutine != null) {\r\n            this.StopCoroutine(this._sendCoroutine);\r\n           
+    this._sendCoroutine = null;\r\n        }\r\n        return;\r\n    }\r\n    asignFuncs()
+    {\r\n        this._callbacks.forEach((callback, index) => {\r\n            if
+    (index == 0)\r\n                return;\r\n            this.testButtons[index].onClick.AddListener(()
+    => callback);\r\n            //this.testButtons[index].onClick.AddListener( callback
+    );\r\n        });\r\n    }\r\n    firstButton() {\r\n        mgLog_1.mgLog.log(''<Color=Orange>
+    called first button </Color>'');\r\n        mgLog_1.mgLog.log(''<Color=Orange>
+    called first button ...</Color>'');\r\n        this.stopMyCoroutine();\r\n   
+    }\r\n    OnDisable() {\r\n        mgLog_1.mgLog.log('' on disable  '');\r\n   
+    }\r\n    *testCoroutine() {\r\n        let wait = new UnityEngine_1.WaitForSeconds(1);\r\n       
+    for (let i = 0; i < 10; ++i) {\r\n            yield new UnityEngine_1.WaitForFixedUpdate();\r\n           
     yield wait;\r\n            mgLog_1.mgLog.log(`wait 1sec - index ${i}`);\r\n           
-    //console.log(`wait 1sec - index ${i}`);\r\n            testst_1.default.getInstance().PrintInfo();\r\n       
-    }\r\n    }\r\n    StopTimer() {\r\n        mgLog_1.mgLog.log('' stoped!!!!  '');\r\n       
-    if (this._sendCoroutine != null) {\r\n            this.StopCoroutine(this._sendCoroutine);\r\n           
-    this._sendCoroutine = null;\r\n        }\r\n    }\r\n}\r\nexports.default = TestManager;\r\n//#
-    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGVzdE1hbmFnZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUZXN0TWFuYWdlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUFzRztBQUV0RyxpREFBcUQ7QUFDckQsMkNBQXdDO0FBQ3hDLHFDQUE4QjtBQUs5QixNQUFxQixXQUFZLFNBQVEscUNBQXFCO0lBQTlEO1FBSUksK0NBQStDOztRQVF2QyxlQUFVLEdBQW1CLENBQUUsSUFBSSxDQUFDLFdBQVcsRUFBRyxDQUFDO0lBcUUvRCxDQUFDO0lBbEVHLEtBQUs7UUFDRCxhQUFLLENBQUMsR0FBRyxDQUFDLHNCQUFzQixDQUFDLENBQUM7UUFFbEMsSUFBSSxDQUFDLGNBQWMsR0FBRyxJQUFJLENBQUMsY0FBYyxDQUFDLElBQUksQ0FBQyxzQkFBc0IsRUFBRSxDQUFDLENBQUM7SUFDN0UsQ0FBQztJQUVELFFBQVE7UUFFSixhQUFLLENBQUMsR0FBRyxDQUFFLGNBQWMsQ0FBQyxDQUFDO1FBQzNCLHVDQUF1QztRQUN2QyxjQUFjO1FBRWQsNENBQTRDO1FBQzVDLDRCQUE0QjtRQUM1QixTQUFTO1FBQ1QsYUFBYTtRQUViLElBQUksQ0FBQyxVQUFVLENBQUMsT0FBTyxDQUFDLENBQUUsUUFBUSxFQUFFLEtBQUssRUFBRyxFQUFFO1lBQzFDLHFFQUFxRTtZQUNyRSxJQUFJLENBQUMsV0FBVyxDQUFDLEtBQUssQ0FBQyxDQUFDLE9BQU8sQ0FBQyxXQUFXLENBQUUsUUFBUSxDQUFFLENBQUM7UUFFNUQsQ0FBQyxDQUFDLENBQUM7SUFDUCxDQUFDO0lBRUQsV0FBVztRQUVQLGFBQUssQ0FBQyxHQUFHLENBQUUsb0JBQW9CLENBQUMsQ0FBQztRQUNqQyxJQUFJLENBQUMsU0FBUyxFQUFFLENBQUM7SUFDckIsQ0FBQztJQUdELFNBQVM7UUFFTCxhQUFLLENBQUMsR0FBRyxDQUFFLGVBQWUsQ0FBQyxDQUFDO0lBQ2hDLENBQUM7SUFHRCxDQUFDLHNCQUFzQjtRQUVuQixJQUFJLElBQUksR0FBRyxJQUFJLDRCQUFjLENBQUMsQ0FBQyxDQUFDLENBQUM7UUFDakMsS0FBSyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLEVBQUUsRUFBRSxFQUFFLENBQUMsRUFBRTtZQUN6Qiw4QkFBOEI7WUFFOUIsTUFBTSxJQUFJLGdDQUFrQixFQUFFLENBQUM7WUFFL0IsTUFBTSxJQUFJLENBQUM7WUFFWCxhQUFLLENBQUMsR0FBRyxDQUFDLHFCQUFxQixDQUFDLEVBQUUsQ0FBQyxDQUFDO1lBQ3BDLHdDQUF3QztZQUV4QyxnQkFBTSxDQUFDLFdBQVcsRUFBRSxDQUFDLFNBQVMsRUFBRSxDQUFDO1NBQ3BDO0lBQ0wsQ0FBQztJQUVELFNBQVM7UUFHTCxhQUFLLENBQUMsR0FBRyxDQUFFLGVBQWUsQ0FBQyxDQUFDO1FBRTVCLElBQUksSUFBSSxDQUFDLGNBQWMsSUFBRyxJQUFJLEVBQUU7WUFDNUIsSUFBSSxDQUFDLGFBQWEsQ0FBRSxJQUFJLENBQUMsY0FBYyxDQUFDLENBQUM7WUFDekMsSUFBSSxDQUFDLGNBQWMsR0FBRyxJQUFJLENBQUM7U0FDOUI7SUFFTCxDQUFDO0NBRUo7QUFqRkQsOEJBaUZDIn0=","assetPath":"Assets/ZepetoScript/CommonSample/TestManager.ts","manifest":{"properties":[{"assembly":"UnityEngine.UI","name":"testButtons","type":"UnityEngine.UI.Button[]","isArray":true,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"TestManager","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: 3d3bb98309d0a7a0254d30f7441a507f
+    testst_1.default.getInstance().PrintInfo();\r\n        }\r\n    }\r\n}\r\nexports.default
+    = TestManager;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGVzdE1hbmFnZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUZXN0TWFuYWdlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUFzRztBQUV0RyxpREFBcUQ7QUFDckQsMkNBQXdDO0FBQ3hDLHFDQUE4QjtBQUs5QixNQUFxQixXQUFZLFNBQVEscUNBQXFCO0lBQTlEO1FBSUksK0NBQStDOztRQVF2QyxlQUFVLEdBQW1CLENBQUMsSUFBSSxDQUFDLFdBQVcsRUFBRSxJQUFJLENBQUMsV0FBVyxFQUFFLENBQUM7SUFtRy9FLENBQUM7SUFoR0csS0FBSztRQUNELGFBQUssQ0FBQyxHQUFHLENBQUMsc0JBQXNCLENBQUMsQ0FBQztRQUVsQyxJQUFJLENBQUMsY0FBYyxHQUFHLElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxDQUFDLGFBQWEsRUFBRSxDQUFDLENBQUM7SUFDcEUsQ0FBQztJQUVELFFBQVE7UUFDSixhQUFLLENBQUMsR0FBRyxDQUFDLGNBQWMsQ0FBQyxDQUFDO1FBQzFCLHVDQUF1QztRQUN2QyxjQUFjO1FBRWQsNENBQTRDO1FBQzVDLDRCQUE0QjtRQUM1QixTQUFTO1FBQ1QsYUFBYTtRQUViLElBQUksQ0FBQyxXQUFXLENBQUMsQ0FBQyxDQUFDLENBQUMsT0FBTyxDQUFDLFdBQVcsQ0FDbkMsR0FBRyxFQUFFO1lBRUQsYUFBSyxDQUFDLEdBQUcsQ0FBQyx3Q0FBd0MsQ0FBQyxDQUFDO1lBQ3BELElBQUksQ0FBQyxlQUFlLEVBQUUsQ0FBQztRQUMzQixDQUFDLENBQ0osQ0FBQztRQUdGLElBQUksQ0FBQyxVQUFVLENBQUMsT0FBTyxDQUFDLENBQUMsUUFBUSxFQUFFLEtBQUssRUFBRSxFQUFFO1lBRXhDLElBQUksS0FBSyxJQUFJLENBQUM7Z0JBQ1YsT0FBTztZQUVYLGFBQUssQ0FBQyxHQUFHLENBQUMseUNBQXlDLEtBQUssYUFBYSxDQUFDLENBQUM7WUFFdkUsSUFBSSxDQUFDLFdBQVcsQ0FBQyxLQUFLLENBQUMsQ0FBQyxPQUFPLENBQUMsV0FBVyxDQUN2QyxRQUFRLENBQ1gsQ0FBQztRQUVOLENBQUMsQ0FBQyxDQUFDO0lBQ1AsQ0FBQztJQUlELGVBQWU7UUFFWCxhQUFLLENBQUMsR0FBRyxDQUFDLGVBQWUsQ0FBQyxDQUFDO1FBRTNCLElBQUksSUFBSSxDQUFDLGNBQWMsSUFBSSxJQUFJLEVBQUU7WUFDN0IsSUFBSSxDQUFDLGFBQWEsQ0FBQyxJQUFJLENBQUMsY0FBYyxDQUFDLENBQUM7WUFDeEMsSUFBSSxDQUFDLGNBQWMsR0FBRyxJQUFJLENBQUM7U0FDOUI7UUFFRCxPQUFPO0lBRVgsQ0FBQztJQUdELFVBQVU7UUFDTixJQUFJLENBQUMsVUFBVSxDQUFDLE9BQU8sQ0FBQyxDQUFDLFFBQVEsRUFBRSxLQUFLLEVBQUUsRUFBRTtZQUN4QyxJQUFJLEtBQUssSUFBSSxDQUFDO2dCQUNWLE9BQU87WUFFWCxJQUFJLENBQUMsV0FBVyxDQUFDLEtBQUssQ0FBQyxDQUFDLE9BQU8sQ0FBQyxXQUFXLENBQ3ZDLEdBQUcsRUFBRSxDQUFDLFFBQVEsQ0FDakIsQ0FBQztZQUNGLDBEQUEwRDtRQUU5RCxDQUFDLENBQUMsQ0FBQztJQUNQLENBQUM7SUFHRCxXQUFXO1FBQ1AsYUFBSyxDQUFDLEdBQUcsQ0FBQyw2Q0FBNkMsQ0FBQyxDQUFDO1FBQ3pELGFBQUssQ0FBQyxHQUFHLENBQUMsZ0RBQWdELENBQUMsQ0FBQztRQUM1RCxJQUFJLENBQUMsZUFBZSxFQUFFLENBQUM7SUFDM0IsQ0FBQztJQUdELFNBQVM7UUFDTCxhQUFLLENBQUMsR0FBRyxDQUFDLGVBQWUsQ0FBQyxDQUFDO0lBQy9CLENBQUM7SUFHRCxDQUFDLGFBQWE7UUFFVixJQUFJLElBQUksR0FBRyxJQUFJLDRCQUFjLENBQUMsQ0FBQyxDQUFDLENBQUM7UUFDakMsS0FBSyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLEVBQUUsRUFBRSxFQUFFLENBQUMsRUFBRTtZQUV6QixNQUFNLElBQUksZ0NBQWtCLEVBQUUsQ0FBQztZQUMvQixNQUFNLElBQUksQ0FBQztZQUVYLGFBQUssQ0FBQyxHQUFHLENBQUMscUJBQXFCLENBQUMsRUFBRSxDQUFDLENBQUM7WUFFcEMsZ0JBQU0sQ0FBQyxXQUFXLEVBQUUsQ0FBQyxTQUFTLEVBQUUsQ0FBQztTQUNwQztJQUNMLENBQUM7Q0FHSjtBQS9HRCw4QkErR0MifQ==","assetPath":"Assets/ZepetoScript/CommonSample/TestManager.ts","manifest":{"properties":[{"assembly":"UnityEngine.UI","name":"testButtons","type":"UnityEngine.UI.Button[]","isArray":true,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"TestManager","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 4497a1e082c330591290b0d78462bab7
   onlyWriteTrigger: 0

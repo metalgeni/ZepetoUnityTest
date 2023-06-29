@@ -3,18 +3,18 @@ import { SpawnInfo, ZepetoPlayers, LocalPlayer } from 'ZEPETO.Character.Controll
 import { WorldService } from 'ZEPETO.World'
 import { Quaternion, Vector3 } from 'UnityEngine';
 //import { mgLog } from './Common/mgLog';
-import  { mgLog }  from './Common/mgLog';
+import { mgLog } from './Common/mgLog';
 
 export default class ZepetoTSTest extends ZepetoScriptBehaviour {
 
-    Start() {    
+    Start() {
         /*
         ZepetoPlayers.instance.CreatePlayerWithZepetoId("", "[ZEPETO_ID", new SpawnInfo(), true);
         ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener( () => {
             const player: LocalPlayer = ZepetoPlayers.instance.LocalPlayer;
         });
         */
-         
+
         //  const spawnInfo = new SpawnInfo();
         //  spawnInfo.position = new Vector3(0,2,0);         
         //  spawnInfo.rotation = Quaternion.Euler(0,0,0); 
@@ -23,15 +23,15 @@ export default class ZepetoTSTest extends ZepetoScriptBehaviour {
         //  spawnInfo.position = new Vector3(0,2,0);         
         //  spawnInfo.rotation = Quaternion.Euler(90,0,0);
         //  ZepetoPlayers.instance.CreatePlayerWithUserId(WorldService.userId, spawnInfo, true);  
-        
-        
-        //mgLog.Log('test test');
 
-         ZepetoPlayers.instance.CreatePlayerWithUserId(WorldService.userId, new SpawnInfo(), true);            
-         ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(() => {           
-             const player: LocalPlayer = ZepetoPlayers.instance.LocalPlayer;       
-         });   
-         
+
+        mgLog.log('test test');
+
+        ZepetoPlayers.instance.CreatePlayerWithUserId(WorldService.userId, new SpawnInfo(), true);
+        ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(() => {
+            const player: LocalPlayer = ZepetoPlayers.instance.LocalPlayer;
+        });
+
     }
 
     // Update() {

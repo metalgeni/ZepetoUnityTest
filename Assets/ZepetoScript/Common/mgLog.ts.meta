@@ -22,10 +22,11 @@ ScriptedImporter:
     { value: true });\r\nexports.mgLog = void 0;\r\n// export default class mgLog
     extends ZepetoScriptBehaviour {\r\n//     Start() {    \r\n//     }\r\n// }\r\nclass
     mgLog {\r\n    static log(...data) {\r\n        if (this.logDisable == true)\r\n           
-    return;\r\n        console.log(data);\r\n    }\r\n    static warn(...data) {\r\n       
-    if (this.logDisable == true)\r\n            return;\r\n        console.warn(data);\r\n   
-    }\r\n    static error(...data) {\r\n        if (this.logDisable == true)\r\n           
+    return;\r\n        //data = ''<Color=Cyan>'' + data + ''</Color>'';\r\n       
+    console.log(data);\r\n    }\r\n    static warn(...data) {\r\n        if (this.logDisable
+    == true)\r\n            return;\r\n        console.warn(data);\r\n    }\r\n   
+    static error(...data) {\r\n        if (this.logDisable == true)\r\n           
     return;\r\n        console.error(data);\r\n    }\r\n}\r\nexports.mgLog = mgLog;\r\nmgLog.logDisable
-    = false;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWdMb2cuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZ0xvZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFFQSw2REFBNkQ7QUFDN0Qsb0JBQW9CO0FBQ3BCLFFBQVE7QUFDUixJQUFJO0FBR0osTUFBYSxLQUFLO0lBRWQsTUFBTSxDQUFDLEdBQUcsQ0FBQyxHQUFHLElBQVc7UUFDckIsSUFBSSxJQUFJLENBQUMsVUFBVSxJQUFJLElBQUk7WUFDdkIsT0FBTztRQUNYLE9BQU8sQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLENBQUM7SUFDdEIsQ0FBQztJQUVELE1BQU0sQ0FBQyxJQUFJLENBQUMsR0FBRyxJQUFXO1FBQ3RCLElBQUksSUFBSSxDQUFDLFVBQVUsSUFBSSxJQUFJO1lBQ3ZCLE9BQU87UUFDWCxPQUFPLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDO0lBQ3ZCLENBQUM7SUFFRCxNQUFNLENBQUMsS0FBSyxDQUFDLEdBQUcsSUFBVztRQUN2QixJQUFJLElBQUksQ0FBQyxVQUFVLElBQUksSUFBSTtZQUN2QixPQUFPO1FBQ1gsT0FBTyxDQUFDLEtBQUssQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUN4QixDQUFDOztBQWxCTCxzQkFtQkM7QUFsQmtCLGdCQUFVLEdBQVMsS0FBSyxDQUFDIn0=","assetPath":"Assets/ZepetoScript/Common/mgLog.ts","manifest":{"properties":[],"name":"mgLog","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: 6322859005ffb98e07cd66caab3e7b87
+    = false;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWdMb2cuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZ0xvZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFFQSw2REFBNkQ7QUFDN0Qsb0JBQW9CO0FBQ3BCLFFBQVE7QUFDUixJQUFJO0FBR0osTUFBYSxLQUFLO0lBRWQsTUFBTSxDQUFDLEdBQUcsQ0FBQyxHQUFHLElBQVc7UUFDckIsSUFBSSxJQUFJLENBQUMsVUFBVSxJQUFJLElBQUk7WUFDdkIsT0FBTztRQUVYLDRDQUE0QztRQUM1QyxPQUFPLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxDQUFDO0lBQ3RCLENBQUM7SUFFRCxNQUFNLENBQUMsSUFBSSxDQUFDLEdBQUcsSUFBVztRQUN0QixJQUFJLElBQUksQ0FBQyxVQUFVLElBQUksSUFBSTtZQUN2QixPQUFPO1FBQ1gsT0FBTyxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUN2QixDQUFDO0lBRUQsTUFBTSxDQUFDLEtBQUssQ0FBQyxHQUFHLElBQVc7UUFDdkIsSUFBSSxJQUFJLENBQUMsVUFBVSxJQUFJLElBQUk7WUFDdkIsT0FBTztRQUNYLE9BQU8sQ0FBQyxLQUFLLENBQUMsSUFBSSxDQUFDLENBQUM7SUFDeEIsQ0FBQzs7QUFwQkwsc0JBcUJDO0FBcEJrQixnQkFBVSxHQUFTLEtBQUssQ0FBQyJ9","assetPath":"Assets/ZepetoScript/Common/mgLog.ts","manifest":{"properties":[],"name":"mgLog","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 05906ffa794a74787a97a4c3af06c061
   onlyWriteTrigger: 0
