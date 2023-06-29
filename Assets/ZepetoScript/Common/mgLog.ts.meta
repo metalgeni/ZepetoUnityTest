@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 53e65728e63eb86429c95603d1f3acda
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nexports.mgLog = void 0;\r\n// export default class mgLog
+    extends ZepetoScriptBehaviour {\r\n//     Start() {    \r\n//     }\r\n// }\r\nclass
+    mgLog {\r\n    static log(...data) {\r\n        if (this.logDisable == true)\r\n           
+    return;\r\n        console.log(data);\r\n    }\r\n    static warn(...data) {\r\n       
+    if (this.logDisable == true)\r\n            return;\r\n        console.warn(data);\r\n   
+    }\r\n    static error(...data) {\r\n        if (this.logDisable == true)\r\n           
+    return;\r\n        console.error(data);\r\n    }\r\n}\r\nexports.mgLog = mgLog;\r\nmgLog.logDisable
+    = false;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWdMb2cuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZ0xvZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFFQSw2REFBNkQ7QUFDN0Qsb0JBQW9CO0FBQ3BCLFFBQVE7QUFDUixJQUFJO0FBR0osTUFBYSxLQUFLO0lBRWQsTUFBTSxDQUFDLEdBQUcsQ0FBQyxHQUFHLElBQVc7UUFDckIsSUFBSSxJQUFJLENBQUMsVUFBVSxJQUFJLElBQUk7WUFDdkIsT0FBTztRQUNYLE9BQU8sQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLENBQUM7SUFDdEIsQ0FBQztJQUVELE1BQU0sQ0FBQyxJQUFJLENBQUMsR0FBRyxJQUFXO1FBQ3RCLElBQUksSUFBSSxDQUFDLFVBQVUsSUFBSSxJQUFJO1lBQ3ZCLE9BQU87UUFDWCxPQUFPLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDO0lBQ3ZCLENBQUM7SUFFRCxNQUFNLENBQUMsS0FBSyxDQUFDLEdBQUcsSUFBVztRQUN2QixJQUFJLElBQUksQ0FBQyxVQUFVLElBQUksSUFBSTtZQUN2QixPQUFPO1FBQ1gsT0FBTyxDQUFDLEtBQUssQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUN4QixDQUFDOztBQWxCTCxzQkFtQkM7QUFsQmtCLGdCQUFVLEdBQVMsS0FBSyxDQUFDIn0=","assetPath":"Assets/ZepetoScript/Common/mgLog.ts","manifest":{"properties":[],"name":"mgLog","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 6322859005ffb98e07cd66caab3e7b87
+  onlyWriteTrigger: 0

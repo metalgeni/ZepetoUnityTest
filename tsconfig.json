@@ -11,6 +11,7 @@
 			}
 		],
 		"types": [
+			"./Library/PackageCache/zepeto.mannequin@1.2.0/Script",
 			"./Library/PackageCache/zepeto.world@1.19.0",
 			"./Library/PackageCache/zepeto.world@1.19.0/typings/InputSystem",
 			"./Library/PackageCache/zepeto.world@1.19.0/typings/PostProcessing/Editor",

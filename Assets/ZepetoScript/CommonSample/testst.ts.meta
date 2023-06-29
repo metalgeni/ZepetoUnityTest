@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 3d91f0e5150df5c42830961d9b2ef9fb
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    mgLog_1 = require(\"../Common/mgLog\");\r\n//import  { Singleton }  from ''../Common/mgLog'';\r\nclass
+    TestSt extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    static getInstance()
+    {\r\n        if (!TestSt.instance) {\r\n            TestSt.instance = new TestSt();\r\n       
+    }\r\n        return TestSt.instance;\r\n    }\r\n    Start() {\r\n        mgLog_1.mgLog.log(''testst1
+    started'');\r\n    }\r\n    PrintInfo() {\r\n        mgLog_1.mgLog.log('' testst1
+    info'');\r\n    }\r\n}\r\nexports.default = TestSt;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVzdHN0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidGVzdHN0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaURBQXFEO0FBQ3JELDJDQUEwQztBQUMxQyxnREFBZ0Q7QUFHaEQsTUFBcUIsTUFBTyxTQUFRLHFDQUFxQjtJQUk5QyxNQUFNLENBQUMsV0FBVztRQUNyQixJQUFJLENBQUMsTUFBTSxDQUFDLFFBQVEsRUFBRTtZQUNsQixNQUFNLENBQUMsUUFBUSxHQUFHLElBQUksTUFBTSxFQUFFLENBQUM7U0FDbEM7UUFDRCxPQUFPLE1BQU0sQ0FBQyxRQUFRLENBQUM7SUFDekIsQ0FBQztJQUdILEtBQUs7UUFDRCxhQUFLLENBQUMsR0FBRyxDQUFDLGlCQUFpQixDQUFDLENBQUM7SUFDakMsQ0FBQztJQUVNLFNBQVM7UUFFWixhQUFLLENBQUMsR0FBRyxDQUFDLGVBQWUsQ0FBQyxDQUFDO0lBQy9CLENBQUM7Q0FFSjtBQXJCRCx5QkFxQkMifQ==","assetPath":"Assets/ZepetoScript/CommonSample/testst.ts","manifest":{"properties":[],"name":"TestSt","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 6cd1bbac08e4f774ad9f515059c20dcf
+  onlyWriteTrigger: 0

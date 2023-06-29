@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 916bdcf6230f35d41a2e923ce931e6ad
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    mgLog_1 = require(\"../Common/mgLog\");\r\n//import  { Singleton }  from ''../Common/mgLog'';\r\nclass
+    TestSt2 extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    //export default
+    class testst2 extends SingletonTemplate<ZepetoScriptBehaviour> {\r\n    Start()
+    {\r\n        mgLog_1.mgLog.log(''testst2 started'');\r\n    }\r\n    PrintInfo()
+    {\r\n        mgLog_1.mgLog.log('' testst2 info'');\r\n    }\r\n}\r\nexports.default
+    = TestSt2;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVzdHN0Mi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRlc3RzdDIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxpREFBcUQ7QUFDckQsMkNBQTBDO0FBQzFDLGdEQUFnRDtBQUdoRCxNQUFxQixPQUFRLFNBQVEscUNBQXFCO0lBQzFELGlGQUFpRjtJQUU3RSxLQUFLO1FBQ0QsYUFBSyxDQUFDLEdBQUcsQ0FBQyxpQkFBaUIsQ0FBQyxDQUFDO0lBQ2pDLENBQUM7SUFFTSxTQUFTO1FBRVosYUFBSyxDQUFDLEdBQUcsQ0FBQyxlQUFlLENBQUMsQ0FBQztJQUMvQixDQUFDO0NBRUo7QUFaRCwwQkFZQyJ9","assetPath":"Assets/ZepetoScript/CommonSample/testst2.ts","manifest":{"properties":[],"name":"TestSt2","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: f8332d946dc31cf96ba8f69dd9f52413
+  onlyWriteTrigger: 0

@@ -1,0 +1,36 @@
+fileFormatVersion: 2
+guid: 43bfcbbb5d5ddd940acf620ec524bddf
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"// class SingletonTemplate<T extends ZepetoScriptBehaviour>
+    extends ZepetoScriptBehaviour {\\r\\n//     private static instance: T;\\r\\n//    
+    // protected constructor(name: string) {\\r\\n//     //   super(name);\\r\\n//    
+    // }\\r\\n//     public static getInstance<U extends ZepetoScriptBehaviour>(this:
+    new (name: string) => U, name: string): U {\\r\\n//       if (!SingletonTemplate.instance)
+    {\\r\\n//         SingletonTemplate.instance = new this(name);\\r\\n//      
+    }\\r\\n//       return SingletonTemplate.instance as U;\\r\\n//     }\\r\\n//  
+    }\\r\\nclass SingletonClass {\\r\\n    constructor() {\\r\\n        // private
+    \uC0DD\uC131\uC790\uB85C \uC678\uBD80\uC5D0\uC11C\uC758 \uC778\uC2A4\uD134\uC2A4
+    \uC0DD\uC131\uC744 \uB9C9\uC2B5\uB2C8\uB2E4.\\r\\n    }\\r\\n    static getInstance()
+    {\\r\\n        if (!SingletonClass.instance) {\\r\\n            SingletonClass.instance
+    = new SingletonClass();\\r\\n        }\\r\\n        return SingletonClass.instance;\\r\\n   
+    }\\r\\n    someMethod() {\\r\\n        console.log(\\\"This is a method of the
+    singleton instance.\\\");\\r\\n    }\\r\\n}\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWdTaW5nbGV0b24uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtZ1NpbmdsZXRvbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwyRkFBMkY7QUFDM0Ysa0NBQWtDO0FBRWxDLCtDQUErQztBQUMvQyx3QkFBd0I7QUFDeEIsV0FBVztBQUVYLG1IQUFtSDtBQUNuSCwyQ0FBMkM7QUFDM0MsdURBQXVEO0FBQ3ZELFVBQVU7QUFDVixnREFBZ0Q7QUFDaEQsUUFBUTtBQUNSLE1BQU07QUFHSixNQUFNLGNBQWM7SUFHbEI7UUFDRSxvQ0FBb0M7SUFDdEMsQ0FBQztJQUVNLE1BQU0sQ0FBQyxXQUFXO1FBQ3ZCLElBQUksQ0FBQyxjQUFjLENBQUMsUUFBUSxFQUFFO1lBQzVCLGNBQWMsQ0FBQyxRQUFRLEdBQUcsSUFBSSxjQUFjLEVBQUUsQ0FBQztTQUNoRDtRQUNELE9BQU8sY0FBYyxDQUFDLFFBQVEsQ0FBQztJQUNqQyxDQUFDO0lBRU0sVUFBVTtRQUNmLE9BQU8sQ0FBQyxHQUFHLENBQUMsNkNBQTZDLENBQUMsQ0FBQztJQUM3RCxDQUFDO0NBQ0YifQ==\",\"assetPath\":\"Assets/ZepetoScript/Common/mgSingleton.ts\",\"manifest\":{\"properties\":[],\"name\":\"SingletonClass\",\"description\":\"\",\"hasAnimatorMove\":false},\"isCompiled\":true}"
+  typescriptHash: 33787ad7ed1310d582e077ed779ec6f9
+  onlyWriteTrigger: 0

@@ -1,0 +1,47 @@
+fileFormatVersion: 2
+guid: 91e5e17409b6f2b4885c1ac1b74939cb
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst mgLog_1 = require(\"../Common/mgLog\");\r\nconst
+    testst_1 = require(\"./testst\");\r\nclass TestManager extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    constructor() {\r\n        //@SerializeField() private testButton: Button;\r\n       
+    super(...arguments);\r\n        this._callbacks = [this.firstButton,];\r\n   
+    }\r\n    Start() {\r\n        mgLog_1.mgLog.log(''test manager started'');\r\n       
+    this._sendCoroutine = this.StartCoroutine(this.ForceReTargetCoroutine());\r\n   
+    }\r\n    OnEnable() {\r\n        mgLog_1.mgLog.log('' on enable  '');\r\n       
+    // this.testButton.onClick.AddListener(\r\n        //     () => {\r\n       
+    //         mgLog.log( '' button onClicked '');\r\n        //         this.StopTimer();\r\n       
+    //     } \r\n        // );        \r\n        this._callbacks.forEach((callback,
+    index) => {\r\n            //this.testButtons[index].onClick.AddListener( ()
+    => callback );     \r\n            this.testButtons[index].onClick.AddListener(callback);\r\n       
+    });\r\n    }\r\n    firstButton() {\r\n        mgLog_1.mgLog.log('' button onClicked
+    '');\r\n        this.StopTimer();\r\n    }\r\n    OnDisable() {\r\n        mgLog_1.mgLog.log(''
+    on disable  '');\r\n    }\r\n    *ForceReTargetCoroutine() {\r\n        let wait
+    = new UnityEngine_1.WaitForSeconds(1);\r\n        for (let i = 0; i < 10; ++i)
+    {\r\n            //yield new WaitForSeconds(1);\r\n            yield new UnityEngine_1.WaitForFixedUpdate();\r\n           
+    yield wait;\r\n            mgLog_1.mgLog.log(`wait 1sec - index ${i}`);\r\n           
+    //console.log(`wait 1sec - index ${i}`);\r\n            testst_1.default.getInstance().PrintInfo();\r\n       
+    }\r\n    }\r\n    StopTimer() {\r\n        mgLog_1.mgLog.log('' stoped!!!!  '');\r\n       
+    if (this._sendCoroutine != null) {\r\n            this.StopCoroutine(this._sendCoroutine);\r\n           
+    this._sendCoroutine = null;\r\n        }\r\n    }\r\n}\r\nexports.default = TestManager;\r\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGVzdE1hbmFnZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUZXN0TWFuYWdlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUFzRztBQUV0RyxpREFBcUQ7QUFDckQsMkNBQXdDO0FBQ3hDLHFDQUE4QjtBQUs5QixNQUFxQixXQUFZLFNBQVEscUNBQXFCO0lBQTlEO1FBSUksK0NBQStDOztRQVF2QyxlQUFVLEdBQW1CLENBQUUsSUFBSSxDQUFDLFdBQVcsRUFBRyxDQUFDO0lBcUUvRCxDQUFDO0lBbEVHLEtBQUs7UUFDRCxhQUFLLENBQUMsR0FBRyxDQUFDLHNCQUFzQixDQUFDLENBQUM7UUFFbEMsSUFBSSxDQUFDLGNBQWMsR0FBRyxJQUFJLENBQUMsY0FBYyxDQUFDLElBQUksQ0FBQyxzQkFBc0IsRUFBRSxDQUFDLENBQUM7SUFDN0UsQ0FBQztJQUVELFFBQVE7UUFFSixhQUFLLENBQUMsR0FBRyxDQUFFLGNBQWMsQ0FBQyxDQUFDO1FBQzNCLHVDQUF1QztRQUN2QyxjQUFjO1FBRWQsNENBQTRDO1FBQzVDLDRCQUE0QjtRQUM1QixTQUFTO1FBQ1QsYUFBYTtRQUViLElBQUksQ0FBQyxVQUFVLENBQUMsT0FBTyxDQUFDLENBQUUsUUFBUSxFQUFFLEtBQUssRUFBRyxFQUFFO1lBQzFDLHFFQUFxRTtZQUNyRSxJQUFJLENBQUMsV0FBVyxDQUFDLEtBQUssQ0FBQyxDQUFDLE9BQU8sQ0FBQyxXQUFXLENBQUUsUUFBUSxDQUFFLENBQUM7UUFFNUQsQ0FBQyxDQUFDLENBQUM7SUFDUCxDQUFDO0lBRUQsV0FBVztRQUVQLGFBQUssQ0FBQyxHQUFHLENBQUUsb0JBQW9CLENBQUMsQ0FBQztRQUNqQyxJQUFJLENBQUMsU0FBUyxFQUFFLENBQUM7SUFDckIsQ0FBQztJQUdELFNBQVM7UUFFTCxhQUFLLENBQUMsR0FBRyxDQUFFLGVBQWUsQ0FBQyxDQUFDO0lBQ2hDLENBQUM7SUFHRCxDQUFDLHNCQUFzQjtRQUVuQixJQUFJLElBQUksR0FBRyxJQUFJLDRCQUFjLENBQUMsQ0FBQyxDQUFDLENBQUM7UUFDakMsS0FBSyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLEVBQUUsRUFBRSxFQUFFLENBQUMsRUFBRTtZQUN6Qiw4QkFBOEI7WUFFOUIsTUFBTSxJQUFJLGdDQUFrQixFQUFFLENBQUM7WUFFL0IsTUFBTSxJQUFJLENBQUM7WUFFWCxhQUFLLENBQUMsR0FBRyxDQUFDLHFCQUFxQixDQUFDLEVBQUUsQ0FBQyxDQUFDO1lBQ3BDLHdDQUF3QztZQUV4QyxnQkFBTSxDQUFDLFdBQVcsRUFBRSxDQUFDLFNBQVMsRUFBRSxDQUFDO1NBQ3BDO0lBQ0wsQ0FBQztJQUVELFNBQVM7UUFHTCxhQUFLLENBQUMsR0FBRyxDQUFFLGVBQWUsQ0FBQyxDQUFDO1FBRTVCLElBQUksSUFBSSxDQUFDLGNBQWMsSUFBRyxJQUFJLEVBQUU7WUFDNUIsSUFBSSxDQUFDLGFBQWEsQ0FBRSxJQUFJLENBQUMsY0FBYyxDQUFDLENBQUM7WUFDekMsSUFBSSxDQUFDLGNBQWMsR0FBRyxJQUFJLENBQUM7U0FDOUI7SUFFTCxDQUFDO0NBRUo7QUFqRkQsOEJBaUZDIn0=","assetPath":"Assets/ZepetoScript/CommonSample/TestManager.ts","manifest":{"properties":[{"assembly":"UnityEngine.UI","name":"testButtons","type":"UnityEngine.UI.Button[]","isArray":true,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"TestManager","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 3d3bb98309d0a7a0254d30f7441a507f
+  onlyWriteTrigger: 0
