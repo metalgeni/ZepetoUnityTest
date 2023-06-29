@@ -9,16 +9,12 @@ type btnCallback1 = () => void;
 
 export default class TestManager extends ZepetoScriptBehaviour {
 
-
-
-    //@SerializeField() private testButton: Button;
-
     @SerializeField() private testButtons: Button[];
 
     private _sendCoroutine: Coroutine;
 
 
-
+    // TypeError: this.stopMyCoroutine is not a function
     //private _callbacks: btnCallback1[] = [this.firstButton, this.firstButton,];
 
 
@@ -40,6 +36,7 @@ export default class TestManager extends ZepetoScriptBehaviour {
         );
 
         /*        
+        // TypeError: this.stopMyCoroutine is not a function
         this._callbacks.forEach((callback, index) => {
 
             if (index == 0)
@@ -48,7 +45,7 @@ export default class TestManager extends ZepetoScriptBehaviour {
             mgLog.log(`<Color=Orange> button asinged index - ${index}...</Color>`);
 
             this.testButtons[index].onClick.AddListener(
-                callback        // TypeError: this.stopMyCoroutine is not a function
+                callback        
             );
 
         });
@@ -95,6 +92,8 @@ export default class TestManager extends ZepetoScriptBehaviour {
 
             TestSt.getInstance().PrintInfo();
         }
+
+        this._sendCoroutine = null;
     }
 
 
