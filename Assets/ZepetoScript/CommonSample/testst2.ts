@@ -7,12 +7,12 @@ export default class TestSt2 extends ZepetoScriptBehaviour {
 //export default class testst2 extends SingletonTemplate<ZepetoScriptBehaviour> {
 
     Start() {    
-        mgLog.log('testst2 started');  
+        //mgLog.log('testst2 started');  
     }
     
     public PrintInfo()
     {
-        mgLog.log(' testst2 info');
+        //mgLog.log(' testst2 info');
     }
 
 }

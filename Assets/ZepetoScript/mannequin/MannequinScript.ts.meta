@@ -1,0 +1,48 @@
+fileFormatVersion: 2
+guid: 9e4e8e3116e4a964698686709d746d60
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    ZEPETO_Mannequin_1 = require(\"ZEPETO.Mannequin\");\r\nconst UnityEngine_1 =
+    require(\"UnityEngine\");\r\nconst mgLog_1 = require(\"../Common/mgLog\");\r\nclass
+    MannequinScript extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start()
+    {\r\n        this.mannequinStart();\r\n        //this._sendCoroutine = this.StartCoroutine(this.testCoroutine());\r\n   
+    }\r\n    *testCoroutine() {\r\n        mgLog_1.mgLog.log('' start coroutine'');\r\n       
+    yield new UnityEngine_1.WaitForSeconds(3);\r\n        mgLog_1.mgLog.log('' coroutine
+    wait end'');\r\n        this.mannequinStart();\r\n        this._sendCoroutine
+    = null;\r\n    }\r\n    mannequinStart() {\r\n        // Code that creates a
+    ZEPETO character based on the logged in ID  \r\n        // ZepetoPlayers.instance.CreatePlayerWithUserId(WorldService.userId,
+    SpawnInfo.Default, true);\r\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\r\n            const character = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character;\r\n           
+    character.gameObject.AddComponent($typeof(ZEPETO_Mannequin_1.MannequinInteractable));\r\n       
+    });\r\n        // Find all Mannequin components\r\n        const mannequins =
+    UnityEngine_1.Object.FindObjectsOfType($typeof(ZEPETO_Mannequin_1.MannequinComponent));\r\n       
+    mannequins.forEach(m => {\r\n            // Enter the Collider\r\n           
+    m.onActive.AddListener(contents => {\r\n                ZEPETO_Mannequin_1.Mannequin.OpenUI(contents);\r\n               
+    const zepetoContext = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character.Context;\r\n               
+    this._previewer = new ZEPETO_Mannequin_1.MannequinPreviewer(zepetoContext, contents);\r\n               
+    this._previewer.PreviewContents();\r\n            });\r\n            // Exit
+    the Collider\r\n            m.onCancel.AddListener(() => {\r\n               
+    ZEPETO_Mannequin_1.Mannequin.CloseUI();\r\n                this._previewer?.ResetContents();\r\n           
+    });\r\n        });\r\n    }\r\n}\r\nexports.default = MannequinScript;\r\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTWFubmVxdWluU2NyaXB0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiTWFubmVxdWluU2NyaXB0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaURBQXNEO0FBQ3RELDZFQUF1RTtBQUV2RSx1REFBaUk7QUFDakksNkNBQWdFO0FBQ2hFLDJDQUF3QztBQUV4QyxNQUFxQixlQUFnQixTQUFRLHFDQUFxQjtJQU05RCxLQUFLO1FBQ0QsSUFBSSxDQUFDLGNBQWMsRUFBRSxDQUFDO1FBQ3RCLGtFQUFrRTtJQUN0RSxDQUFDO0lBRUQsQ0FBQyxhQUFhO1FBR1YsYUFBSyxDQUFDLEdBQUcsQ0FBQyxrQkFBa0IsQ0FBQyxDQUFDO1FBQzlCLE1BQU0sSUFBSSw0QkFBYyxDQUFDLENBQUMsQ0FBQyxDQUFDO1FBRzVCLGFBQUssQ0FBQyxHQUFHLENBQUMscUJBQXFCLENBQUMsQ0FBQztRQUNqQyxJQUFJLENBQUMsY0FBYyxFQUFFLENBQUM7UUFHdEIsSUFBSSxDQUFDLGNBQWMsR0FBRyxJQUFJLENBQUM7SUFDL0IsQ0FBQztJQUlELGNBQWM7UUFFVixtRUFBbUU7UUFDbkUsK0ZBQStGO1FBRS9GLDJDQUFhLENBQUMsUUFBUSxDQUFDLGtCQUFrQixDQUFDLFdBQVcsQ0FBQyxHQUFHLEVBQUU7WUFDdkQsTUFBTSxTQUFTLEdBQUcsMkNBQWEsQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDLFlBQVksQ0FBQyxTQUFTLENBQUM7WUFDNUUsU0FBUyxDQUFDLFVBQVUsQ0FBQyxZQUFZLFNBQUMsd0NBQXFCLEdBQUk7UUFDL0QsQ0FBQyxDQUFDLENBQUM7UUFFSCxnQ0FBZ0M7UUFDaEMsTUFBTSxVQUFVLEdBQUcsb0JBQU0sQ0FBQyxpQkFBaUIsU0FBQyxxQ0FBa0IsRUFBRyxDQUFDO1FBRWxFLFVBQVUsQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDLEVBQUU7WUFDbkIscUJBQXFCO1lBQ3JCLENBQUMsQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDLFFBQVEsQ0FBQyxFQUFFO2dCQUM5Qiw0QkFBUyxDQUFDLE1BQU0sQ0FBQyxRQUFRLENBQUMsQ0FBQztnQkFDM0IsTUFBTSxhQUFhLEdBQUcsMkNBQWEsQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDLFlBQVksQ0FBQyxTQUFTLENBQUMsT0FBTyxDQUFDO2dCQUN4RixJQUFJLENBQUMsVUFBVSxHQUFHLElBQUkscUNBQWtCLENBQUMsYUFBYSxFQUFFLFFBQVEsQ0FBQyxDQUFDO2dCQUNsRSxJQUFJLENBQUMsVUFBVSxDQUFDLGVBQWUsRUFBRSxDQUFDO1lBQ3RDLENBQUMsQ0FBQyxDQUFDO1lBRUgsb0JBQW9CO1lBQ3BCLENBQUMsQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDLEdBQUcsRUFBRTtnQkFDeEIsNEJBQVMsQ0FBQyxPQUFPLEVBQUUsQ0FBQztnQkFDcEIsSUFBSSxDQUFDLFVBQVUsRUFBRSxhQUFhLEVBQUUsQ0FBQztZQUNyQyxDQUFDLENBQUMsQ0FBQztRQUNQLENBQUMsQ0FBQyxDQUFDO0lBRVAsQ0FBQztDQUlKO0FBNURELGtDQTREQyJ9","assetPath":"Assets/ZepetoScript/mannequin/MannequinScript.ts","manifest":{"properties":[],"name":"MannequinScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: ddef710b3b2836ee9ee377866562f6ff
+  onlyWriteTrigger: 0

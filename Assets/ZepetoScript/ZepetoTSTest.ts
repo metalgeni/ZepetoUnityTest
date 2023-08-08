@@ -4,6 +4,7 @@ import { WorldService } from 'ZEPETO.World'
 import { Quaternion, Vector3 } from 'UnityEngine';
 //import { mgLog } from './Common/mgLog';
 import { mgLog } from './Common/mgLog';
+import { MannequinInteractable } from 'ZEPETO.Mannequin';
 
 export default class ZepetoTSTest extends ZepetoScriptBehaviour {
 
@@ -30,6 +31,11 @@ export default class ZepetoTSTest extends ZepetoScriptBehaviour {
         ZepetoPlayers.instance.CreatePlayerWithUserId(WorldService.userId, new SpawnInfo(), true);
         ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(() => {
             const player: LocalPlayer = ZepetoPlayers.instance.LocalPlayer;
+
+            // added mannequin
+            // const character = ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character;            
+            // character.gameObject.AddComponent<MannequinInteractable>();
+
         });
 
     }

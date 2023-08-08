@@ -19,12 +19,11 @@ ScriptedImporter:
   WrapperFilters: []
   wrapperOutputDirectory: Generated
   compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
-    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
-    mgLog_1 = require(\"../Common/mgLog\");\r\n//import  { Singleton }  from ''../Common/mgLog'';\r\nclass
-    TestSt2 extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    //export default
-    class testst2 extends SingletonTemplate<ZepetoScriptBehaviour> {\r\n    Start()
-    {\r\n        mgLog_1.mgLog.log(''testst2 started'');\r\n    }\r\n    PrintInfo()
-    {\r\n        mgLog_1.mgLog.log('' testst2 info'');\r\n    }\r\n}\r\nexports.default
-    = TestSt2;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVzdHN0Mi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRlc3RzdDIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxpREFBcUQ7QUFDckQsMkNBQTBDO0FBQzFDLGdEQUFnRDtBQUdoRCxNQUFxQixPQUFRLFNBQVEscUNBQXFCO0lBQzFELGlGQUFpRjtJQUU3RSxLQUFLO1FBQ0QsYUFBSyxDQUFDLEdBQUcsQ0FBQyxpQkFBaUIsQ0FBQyxDQUFDO0lBQ2pDLENBQUM7SUFFTSxTQUFTO1FBRVosYUFBSyxDQUFDLEdBQUcsQ0FBQyxlQUFlLENBQUMsQ0FBQztJQUMvQixDQUFDO0NBRUo7QUFaRCwwQkFZQyJ9","assetPath":"Assets/ZepetoScript/CommonSample/testst2.ts","manifest":{"properties":[],"name":"TestSt2","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: f8332d946dc31cf96ba8f69dd9f52413
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\n//import 
+    { Singleton }  from ''../Common/mgLog'';\r\nclass TestSt2 extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    //export default class testst2 extends SingletonTemplate<ZepetoScriptBehaviour>
+    {\r\n    Start() {\r\n        //mgLog.log(''testst2 started'');  \r\n    }\r\n   
+    PrintInfo() {\r\n        //mgLog.log('' testst2 info'');\r\n    }\r\n}\r\nexports.default
+    = TestSt2;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVzdHN0Mi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRlc3RzdDIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxpREFBcUQ7QUFFckQsZ0RBQWdEO0FBR2hELE1BQXFCLE9BQVEsU0FBUSxxQ0FBcUI7SUFDMUQsaUZBQWlGO0lBRTdFLEtBQUs7UUFDRCxpQ0FBaUM7SUFDckMsQ0FBQztJQUVNLFNBQVM7UUFFWiw2QkFBNkI7SUFDakMsQ0FBQztDQUVKO0FBWkQsMEJBWUMifQ==","assetPath":"Assets/ZepetoScript/CommonSample/testst2.ts","manifest":{"properties":[],"name":"TestSt2","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: d0ac29539b72ecb2260d2d32769c324f
   onlyWriteTrigger: 0

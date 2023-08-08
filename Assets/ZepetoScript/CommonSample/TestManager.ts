@@ -21,11 +21,12 @@ export default class TestManager extends ZepetoScriptBehaviour {
     Start() {
         mgLog.log('test manager started');
 
-        this._sendCoroutine = this.StartCoroutine(this.testCoroutine());
+        this._sendCoroutine = null;
+        //this._sendCoroutine = this.StartCoroutine(this.testCoroutine());
     }
 
     OnEnable() {
-        mgLog.log(' on enable  ');
+        //mgLog.log(' on enable  ');
 
         this.testButtons[0].onClick.AddListener(
             () => {
@@ -56,7 +57,7 @@ export default class TestManager extends ZepetoScriptBehaviour {
 
     stopMyCoroutine(): void {
 
-        mgLog.log(' stoped!!!!  ');
+        //mgLog.log(' stoped!!!!  ');
 
         if (this._sendCoroutine != null) {
             this.StopCoroutine(this._sendCoroutine);
@@ -69,14 +70,13 @@ export default class TestManager extends ZepetoScriptBehaviour {
 
 
     firstButton() {
-        mgLog.log('<Color=Orange> called first button </Color>');
-        mgLog.log('<Color=Orange> called first button ...</Color>');
+        mgLog.log('<Color=Orange> called first button </Color>');        
         this.stopMyCoroutine();
     }
 
 
     OnDisable() {
-        mgLog.log(' on disable  ');
+        //mgLog.log(' on disable  ');
     }
 
 

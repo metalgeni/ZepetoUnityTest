@@ -16,12 +16,12 @@ export default class TestSt extends ZepetoScriptBehaviour {
   
 
     Start() {    
-        mgLog.log('testst1 started');  
+        //mgLog.log('testst1 started');  
     }
 
     public PrintInfo() :void
     {
-        mgLog.log(' testst1 info');
+        //mgLog.log(' testst1 info');
     }
 
 }

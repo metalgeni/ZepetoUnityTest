@@ -22,9 +22,10 @@ ScriptedImporter:
     { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
     ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
     ZEPETO_World_1 = require(\"ZEPETO.World\");\r\n//import { mgLog } from ''./Common/mgLog'';\r\nconst
-    mgLog_1 = require(\"./Common/mgLog\");\r\nclass ZepetoTSTest extends ZEPETO_Script_1.ZepetoScriptBehaviour
-    {\r\n    Start() {\r\n        /*\r\n        ZepetoPlayers.instance.CreatePlayerWithZepetoId(\"\",
-    \"[ZEPETO_ID\", new SpawnInfo(), true);\r\n        ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(
+    mgLog_1 = require(\"./Common/mgLog\");\r\nconst ZEPETO_Mannequin_1 = require(\"ZEPETO.Mannequin\");\r\nclass
+    ZepetoTSTest extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n       
+    /*\r\n        ZepetoPlayers.instance.CreatePlayerWithZepetoId(\"\", \"[ZEPETO_ID\",
+    new SpawnInfo(), true);\r\n        ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(
     () => {\r\n            const player: LocalPlayer = ZepetoPlayers.instance.LocalPlayer;\r\n       
     });\r\n        */\r\n        //  const spawnInfo = new SpawnInfo();\r\n       
     //  spawnInfo.position = new Vector3(0,2,0);         \r\n        //  spawnInfo.rotation
@@ -34,7 +35,9 @@ ScriptedImporter:
     spawnInfo, true);  \r\n        mgLog_1.mgLog.log(''test test'');\r\n        $extension(\"ZEPETO.Character.Controller.ZepetoPlayersExtension\").CreatePlayerWithUserId(ZEPETO_Character_Controller_1.ZepetoPlayers.instance,
     ZEPETO_World_1.WorldService.userId, new ZEPETO_Character_Controller_1.SpawnInfo(),
     true);\r\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
-    => {\r\n            const player = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer;\r\n       
-    });\r\n    }\r\n}\r\nexports.default = ZepetoTSTest;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiWmVwZXRvVFNUZXN0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiWmVwZXRvVFNUZXN0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaURBQXFEO0FBQ3JELDZFQUFvRjtBQUNwRiwrQ0FBMkM7QUFFM0MseUNBQXlDO0FBQ3pDLDBDQUF1QztBQUV2QyxNQUFxQixZQUFhLFNBQVEscUNBQXFCO0lBRTNELEtBQUs7UUFDRDs7Ozs7VUFLRTtRQUVGLHNDQUFzQztRQUN0QyxxREFBcUQ7UUFDckQsa0RBQWtEO1FBRWxELHNDQUFzQztRQUN0QyxxREFBcUQ7UUFDckQsa0RBQWtEO1FBQ2xELDBGQUEwRjtRQUcxRixhQUFLLENBQUMsR0FBRyxDQUFDLFdBQVcsQ0FBQyxDQUFDO1FBRXZCLGlFQUF1QixzQkFBc0IsQ0FBN0MsMkNBQWEsQ0FBQyxRQUFRLEVBQXdCLDJCQUFZLENBQUMsTUFBTSxFQUFFLElBQUksdUNBQVMsRUFBRSxFQUFFLElBQUksRUFBRTtRQUMxRiwyQ0FBYSxDQUFDLFFBQVEsQ0FBQyxrQkFBa0IsQ0FBQyxXQUFXLENBQUMsR0FBRyxFQUFFO1lBQ3ZELE1BQU0sTUFBTSxHQUFnQiwyQ0FBYSxDQUFDLFFBQVEsQ0FBQyxXQUFXLENBQUM7UUFDbkUsQ0FBQyxDQUFDLENBQUM7SUFFUCxDQUFDO0NBTUo7QUFqQ0QsK0JBaUNDIn0=","assetPath":"Assets/ZepetoScript/ZepetoTSTest.ts","manifest":{"properties":[],"name":"ZepetoTSTest","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: 3b89fc136abf9c2512a754e0b4cf3ed4
+    => {\r\n            const player = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer;\r\n           
+    // added mannequin\r\n            // const character = ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character;           
+    \r\n            // character.gameObject.AddComponent<MannequinInteractable>();\r\n       
+    });\r\n    }\r\n}\r\nexports.default = ZepetoTSTest;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiWmVwZXRvVFNUZXN0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiWmVwZXRvVFNUZXN0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaURBQXFEO0FBQ3JELDZFQUFvRjtBQUNwRiwrQ0FBMkM7QUFFM0MseUNBQXlDO0FBQ3pDLDBDQUF1QztBQUN2Qyx1REFBeUQ7QUFFekQsTUFBcUIsWUFBYSxTQUFRLHFDQUFxQjtJQUUzRCxLQUFLO1FBQ0Q7Ozs7O1VBS0U7UUFFRixzQ0FBc0M7UUFDdEMscURBQXFEO1FBQ3JELGtEQUFrRDtRQUVsRCxzQ0FBc0M7UUFDdEMscURBQXFEO1FBQ3JELGtEQUFrRDtRQUNsRCwwRkFBMEY7UUFHMUYsYUFBSyxDQUFDLEdBQUcsQ0FBQyxXQUFXLENBQUMsQ0FBQztRQUV2QixpRUFBdUIsc0JBQXNCLENBQTdDLDJDQUFhLENBQUMsUUFBUSxFQUF3QiwyQkFBWSxDQUFDLE1BQU0sRUFBRSxJQUFJLHVDQUFTLEVBQUUsRUFBRSxJQUFJLEVBQUU7UUFDMUYsMkNBQWEsQ0FBQyxRQUFRLENBQUMsa0JBQWtCLENBQUMsV0FBVyxDQUFDLEdBQUcsRUFBRTtZQUN2RCxNQUFNLE1BQU0sR0FBZ0IsMkNBQWEsQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDO1lBRS9ELGtCQUFrQjtZQUNsQiwyRkFBMkY7WUFDM0YsOERBQThEO1FBRWxFLENBQUMsQ0FBQyxDQUFDO0lBRVAsQ0FBQztDQU1KO0FBdENELCtCQXNDQyJ9","assetPath":"Assets/ZepetoScript/ZepetoTSTest.ts","manifest":{"properties":[],"name":"ZepetoTSTest","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 8c6509a9ed446a2ad45470c7d9a52112
   onlyWriteTrigger: 0
